@@ -1,7 +1,6 @@
 # READ ME
 
-Talk *'Multi-agent learning of causal networks in the
-Internet of Things'* given by [Stefano Mariani](https://smarianimore.github.io) at [PAAMS 2023](https://www.paams.net/)
+Talk *'Learning Stigmergic Communication for Self-organising Coordination'* given by [Stefano Mariani](https://smarianimore.github.io) at [ACSOS 2023](https://2023.acsos.org/track/acsos-2023-papers?#program)
 
 # Credits
 
