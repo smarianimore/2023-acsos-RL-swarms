@@ -7,8 +7,8 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>Adaptive Intersections @ WETICE 2021</title>
-    <meta content="Talk 'Multi-agent learning of causal networks in the Internet of Things' given by Stefano Mariani at PAAMS 2023" name="description">
+    <title>Learning stigmergy @ ACSOS 2023</title>
+    <meta content="Talk 'Learning Stigmergic Communication for Self-organising Coordination' given by Stefano Mariani at ACSOS 2023" name="description">
     <meta content="Stefano Mariani" name="author">
 
     <meta content="yes" name="apple-mobile-web-app-capable">
@@ -39,80 +39,140 @@
     <div class="reveal">
       <div class="slides">
 
-        <section data-transition="convex" data-background-image="res/paams-home.png" data-background-opacity=0.15 data-background-size="cover">
+        <section data-transition="convex" data-background-image="res/acsos-home.png" data-background-opacity=0.35 data-background-size="cover">
+          <p>
+            <small><em>4th IEEE International Conference on Autonomic Computing and Self-Organizing Systems</em> <br> Toronto, Canada - 25-29/9/2023 </small>
+          </p>
+          <hr>
           <br>
-          <h2> Multi-agent learning <br> of causal networks <br> in the Internet of Things </h2>
+          <h3> Learning <br> Stigmergic Communication <br> for Self-organising Coordination </h3>
           <hr>
-          <p> <a href="https://smarianimore.github.io">Stefano Mariani</a>, Pasquale Roseti, Franco Zambonelli </p>
-          <hr>
+          <p> <a href="https://smarianimore.github.io">Stefano Mariani</a>, Franco Zambonelli </p>
           <p>
             <small><em> University of Modena and Reggio Emilia </em></small>
           </p>
         </section>
 
         <section data-transition="convex">
-          <section data-markdown>
+          <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/motivations.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Motivation
               ----
-
-              * **Causal models** of app. environment are required for correct inference, prediction, planning, what-if, ...
-              * &shy;<!-- .element: class="fragment" -->Software agents usually **implicitly embed** them...
-                - e.g. IF cause THEN effect (reactive agents)
-                - belief :- intention(s) (BDI)
-              * &shy;<!-- .element: class="fragment" -->...assuming **complete knowledge** at **design-time**
-
-              <p style="color: red" class="fragment"> <em>What if that's not available?</em> </p>
+              * Agents in MAS must coordinate to achieve collective goals
+              <ul><small>
+                <li> centralised w/ global info VS self-organising </li>
+                <li> implicit w/ full observability VS explicit w/ communication </li>
+              </small></ul>
             </script>
           </section>
-          <section data-markdown>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-background-image="res/motivations.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Motivation
+              ----
+              * Agents in MAS must coordinate to achieve collective goals
+              <ul><small>
+                <li> centralised w/ global info VS self-organising </li>
+                <li> implicit w/ full observability VS explicit w/ communication </li>
+              </small></ul>
+              * Communication actions and coordination protocols
+              <ul><small>
+                <li> usually assumed as innate capabilities of agents </li>
+                <li> tailored to goal to purse by design / via simulation </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-background-image="res/motivations.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Motivation
+              ----
+              * Agents in MAS must coordinate to achieve collective goals
+              <ul><small>
+                <li> centralised w/ global info VS self-organising </li>
+                <li> implicit w/ full observability VS explicit w/ communication </li>
+              </small></ul>
+              * Communication actions and coordination protocols
+              <ul><small>
+                <li> usually assumed as innate capabilities of agents </li>
+                <li> tailored to goal to purse by design / via simulation </li>
+              </small></ul>
+
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt from scratch? </p>
+            </script>
+          </section>
+
+          <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
+              <p style="color: green"> Learn pheromone-based communication! </p>
 
-              **Learn** causal models at **run-time**!
-
-              * &shy;<!-- .element: class="fragment" -->**Causal discovery** tells apart cause-effect from correlation...
-              * <!-- .element: class="fragment" -->...but mostly assumes full observability of env
-
-              <p style="color: red" class="fragment"> <em>What if that's not available?</em> </p>
-
-              <p style="color: green" class="fragment"> Learn with <strong>multiple agents</strong> with <strong>partial obs</strong>! </p>
+              1. is it feasible?
             </script>
           </section>
-          <section data-markdown>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Goal
+              ----
+              <p style="color: green"> Learn pheromone-based communication! </p>
+
+              1. is it feasible?
+              2. is it effective (wrt hard-coded)?
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Goal
+              ----
+              <p style="color: green"> Learn pheromone-based communication! </p>
+
+              1. is it feasible?
+              2. is it effective (wrt hard-coded)?
+              3. is it functional to self-organisation?
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Goal
+              ----
+              <p style="color: green"> Learn pheromone-based communication! </p>
+
+              1. is it feasible?
+              2. is it effective (wrt hard-coded)?
+              3. is it functional to self-organisation?
+              4. is it adaptive to changing goals?
+            </script>
+          </section>
+
+          <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-transition="slide" data-background-image="res/contribution.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Contribution
               ----
-
-              **Collaborative multi-agent protocol for distributed causal discovery**
-
-              1. <!-- .element: class="fragment" -->formulate multi-agent learning problem
-              2. <!-- .element: class="fragment" -->introduce coordination protocol
-              3. <!-- .element: class="fragment" -->experimental evaluation
+              1. MARL problem formulation
+              2. NetLogo model
+              3. Experimental evaluation
             </script>
           </section>
         </section>
 
         <section data-transition="convex">
-          <section data-markdown>
+          <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/intervention.jpg" data-background-opacity="0.15" data-background-size="contain" -->
-              ## Intervention
+              ## Q-learning in 1 slide :)
               ----
               
-              * ML recognises *correlation*, not causation
-              * &shy;<!-- .element: class="fragment" -->Learning through **intervention**
-                + act on a variable *all others being untouched*
-                + observe changes
-                + <!-- .element: class="fragment" -->formalised as do operator do(X=x)
-                  - $\mathcal{P}(T) \neq \mathcal{P}(T | do(AC=on))$
-                  - $\mathcal{P}(AC) = \mathcal{P}(AC | do(T=t))$
-
-              &shy;<!-- .element: class="fragment" -->*What if cannot intervene (e.g. sensor variable)?*
+              * Track in value $q$ "how worth" it is to do action $a$ in state $s$
+              * The higher the reward $r$ got in $s$ after doing $a$ the higher the increase in $q$
+              * Best policy is to always select $a$ with highest $q$ in given $s$
+              * Exploration/exploitation tradeoff (optimality $\implies$ visit all states infinitely often)
             </script>
           </section>
           <section data-markdown>
@@ -531,7 +591,7 @@
           </script>
         </section>
 
-        <section data-transition="convex" data-background-image="confused-meme.png" data-background-opacity=0.25 data-background-size="cover">
+        <section data-transition="convex" data-background-image="res/confused-meme.png" data-background-opacity=0.25 data-background-size="cover">
           <h3> Thanks </h3>
           <h3> for your attention </h3>
           <hr>
