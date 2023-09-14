@@ -56,7 +56,7 @@
         <section data-transition="convex">
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-background-image="res/motivations.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Motivation
               ----
               * Agents in MAS must coordinate to achieve collective goals
@@ -68,7 +68,6 @@
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-background-image="res/motivations.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Motivation
               ----
               * Agents in MAS must coordinate to achieve collective goals
@@ -85,7 +84,6 @@
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-background-image="res/motivations.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Motivation
               ----
               * Agents in MAS must coordinate to achieve collective goals
@@ -105,7 +103,7 @@
 
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
               <p style="color: green"> Learn pheromone-based communication! </p>
@@ -115,7 +113,6 @@
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
               <p style="color: green"> Learn pheromone-based communication! </p>
@@ -126,7 +123,6 @@
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
               <p style="color: green"> Learn pheromone-based communication! </p>
@@ -138,7 +134,6 @@
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-transition="slide" data-background-image="res/goals.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
               <p style="color: green"> Learn pheromone-based communication! </p>
@@ -152,12 +147,14 @@
 
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-transition="slide" data-background-image="res/contribution.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Contribution
               ----
               1. MARL problem formulation
               2. NetLogo model
               3. Experimental evaluation
+
+              Potential impact on swarm robotics besides MARL
             </script>
           </section>
         </section>
@@ -165,48 +162,63 @@
         <section data-transition="convex">
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-background-image="res/intervention.jpg" data-background-opacity="0.15" data-background-size="contain" -->
+              <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Q-learning in 1 slide :)
               ----
-              
               * Track in value $q$ "how worth" it is to do action $a$ in state $s$
               * The higher the reward $r$ got in $s$ after doing $a$ the higher the increase in $q$
               * Best policy is to always select $a$ with highest $q$ in given $s$
               * Exploration/exploitation tradeoff (optimality $\implies$ visit all states infinitely often)
             </script>
           </section>
-          <section data-markdown>
-            <script type="text/template">
-              <!-- .slide: data-transition="slide" data-background-image="res/causal-discovery.jpg" data-background-opacity="0.15" data-background-size="cover" -->
-              ### Causal discovery
-              ----
-
-              * Still possible with *identifiability conditions* (i.e. assumptions)
-                + causal network is a DAG
-                + no unknown confounders
-                + (others, no time now)
-              * &shy;<!-- .element: class="fragment" -->E.g. $AC \rightarrow T \leftarrow Season$
-                + *conditional independence* tests
-                + e.g. $\chi^2(T | Season)$ and viceversa
-
-              Result is a causal network (DAG) <!-- .element: class="fragment" -->
-            </script>
-          </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-transition="slide" -->
-              ## Problem
+              <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Q-learning in MAS?
               ----
-
-              <img data-src="res/agent-env-4_1.png">
+              * Conceived for single-agent env $\implies$ convergence guarantees there :(
+              * No formal proof of failure for MARL :)
+              * Well suited for our goal (independent learning) :)
+              * Existing literature of successful applications :)
             </script>
           </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide: data-transition="slide" -->
-              ## Problem
-              ----
+        </section>
 
+        <section data-transition="convex">
+          <section data-markdown data-auto-animate="">
+            <script type="text/template">
+              <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="cover" -->
+              ### Model
+              ----
+              * Slime mold aggregation (simplest swarming)
+                - slime mold is different cells when env is good (eg no threats)
+                - cells aggregate when env becomes hostile
+            </script>
+          </section>
+          <section data-markdown data-auto-animate="">
+            <script type="text/template">
+              ### Model
+              ----
+              * Slime mold aggregation (simplest swarming)
+                - slime mold is different cells when env is good (eg no threats)
+                - cells aggregate when env becomes hostile
+              * Aggregation appears by emergence
+                1. cells move around depositing pheromone
+                2. cells prefer to move toward pheromone
+                3. pheromone evaporates gradually
+            </script>
+          </section>
+          <section data-markdown data-auto-animate="">
+            <script type="text/template">
+              ### Model
+              ----
+              <img width="50%" data-src="res/original-start.png">
+            </script>
+          </section>
+          <section data-markdown data-auto-animate="">
+            <script type="text/template">
+              ### Model
+              ----
               <style>
                 .container{
                   display: flex;
@@ -217,27 +229,145 @@
               </style>
               <div class="container">
                 <div class="col">
-                  <img data-src="res/agent-env-4_1.png">
+                  <img data-src="res/original-start.png">
                 </div>
                 <div class="col">
-                  <ul><small>
-                    <li> $N$ agents $\mathcal{A} = \{\mathcal{A}_i\}, i = 1, ..., N$ </li>
-                    <li class="fragment"> $V$ variables = $\mathcal{C} \cup U$ (controlled + uncontrolled) </li>
-                    <li class="fragment"> Each $\mathcal{A}_i$ learns <strong>local causal net</strong> $\mathcal{L}_i$ with observable vars $P_i = \{\mathcal{C}_i \cup U_i\} \subset V$ </li>
-                    <li class="fragment"> Each $\mathcal{A}_i$ has <strong>partial obs</strong>: $V = \bigcup_{i=1}^N P_i$ (overlaps may exist) </li>
-                    <li class="fragment"> Agents can communicate </li>
-                    <li class="fragment"> Agents have criteria to trigger collaboration </li>
-                  </small></ul>
+                  <img data-src="res/original-end.png">
                 </div>
               </div>
+            </script>
+          </section>
+
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (minimal!)
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Action space (1 $\forall$ experiment):
+              <ul><small>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Action space (1 $\forall$ experiment):
+              <ul><small>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Action space (1 $\forall$ experiment):
+              <ul><small>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
+                <li> c + (f) stand-still (no comm baseline) </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Action space (1 $\forall$ experiment):
+              <ul><small>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
+                <li> c + (f) stand-still (no comm baseline) </li>
+                <li> d,e (sota baseline) </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Action space (1 $\forall$ experiment):
+              <ul><small>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
+                <li> c + (f) stand-still (no comm baseline) </li>
+                <li> d,e (sota baseline) </li>
+              </small></ul>
+              * Reward functions (tests adaptation):
+              <ul><small>
+                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Action space (1 $\forall$ experiment):
+              <ul><small>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
+                <li> c + (f) stand-still (no comm baseline) </li>
+                <li> d,e (sota baseline) </li>
+              </small></ul>
+              * Reward functions (tests adaptation):
+              <ul><small>
+                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
+                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ </li>
+              </small></ul>
+
+              Minimal intervention: swapped reward $\Leftrightarrow$ penalty!
+            </script>
+          </section>
+
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: -->
+              ## Experimental setting
+              ----
+              <img width="70%" data-src="res/model-params.png">
+
+              <small> <em>(too boring now, check paper)</em> </small>
+            </script>
+          </section>
+        </section>
+
+        <section data-transition="convex">
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (1) it is feasible :)
+              ----
+              <img data-src="res/example-success-start.png">
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-transition="slide" -->
-              ## Problem
+              ## Results: (1) it is feasible :)
               ----
-
               <style>
                 .container{
                   display: flex;
@@ -248,20 +378,130 @@
               </style>
               <div class="container">
                 <div class="col">
-                  <img data-src="res/agent-env-4_1.png">
+                  <img data-src="res/example-success-start.png">
                 </div>
                 <div class="col">
-                  <ul><small>
-                    <li> $N$ agents $\mathcal{A} = \{\mathcal{A}_i\}, i = 1, ..., N$ </li>
-                    <li> $V$ variables = $\mathcal{C} \cup U$ (controlled + uncontrolled) </li>
-                    <li> Each $\mathcal{A}_i$ learns <strong>local causal net</strong> $\mathcal{L}_i$ with observable vars $P_i = \{\mathcal{C}_i \cup U_i\} \subset V$ </li>
-                    <li> Each $\mathcal{A}_i$ has <strong>partial obs</strong>: $V = \bigcup_{i=1}^N P_i$ (overlaps may exist) </li>
-                    <li> Agents can communicate </li>
-                    <li> Agents have <em>criteria to trigger collaboration</em> </li>
-                  </small></ul>
+                  <img data-src="res/example-success-end.png">
                 </div>
               </div>
-              <p style="color: red"> Each $\mathcal{A}_i$ wants to learn $M_i$ refining $\mathcal{L}_i$ with unknown variables $\neg{P}_i = V \setminus P_i$ and their links with $P_i$ </p>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (1) it is feasible :)
+              ----
+              <img data-src="res/BS-chemical-gradient-02-03_29_41_745_PM-16-Dec-2022_cluster size.png">
+
+              Keys: low $\alpha$, high $\gamma$, goal set (1 cluster w/ most agents)
+            </script>
+          </section>
+
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (2) it is effective :)
+              ----
+              <iframe width="800" height="480" src="https://www.youtube.com/embed/7eSnB8cpmBg?si=YL7GxlT6El-GNjwS"
+                      title="YouTube video player" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+              Keys: small radius, high $\gamma$, high $p$ $\implies$ 4x speed up!
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (2) it is effective :)
+              ----
+              <style>
+                .container{
+                  display: flex;
+                }
+                .col{
+                  flex: 1;
+                }
+              </style>
+              <div class="container">
+                <div class="col">
+                  <img width="65%" data-src="res/BS-3actions-gradient-ticks-01-11_45_55_375_AM-26-Jan-2023_episode timestep.png">
+                </div>
+              </div>
+              <div class="container">
+                <div class="col">
+                  <img width="65%" data-src="res/BS-baseline-nolearn-01-10_24_06_507_AM-26-Jan-2023_episode timestep.png">
+                </div>
+              </div>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (2) it is effective :)
+              ----
+              <style>
+                .container{
+                  display: flex;
+                }
+                .col{
+                  flex: 1;
+                }
+              </style>
+              <div class="container">
+                <div class="col">
+                  <img data-src="res/BS-3actions-gradient-ticks-01-11_45_55_375_AM-26-Jan-2023_cluster size.png">
+                </div>
+                <div class="col">
+                  <img data-src="res/BS-3actions-gradient-ticks-01-11_45_55_375_AM-26-Jan-2023_episode timestep.png">
+                </div>
+              </div>
+              <div class="container">
+                <div class="col">
+                  <img data-src="res/BS-baseline-nolearn-01-10_24_06_507_AM-26-Jan-2023_cluster size.png">
+                </div>
+                <div class="col">
+                  <img data-src="res/BS-baseline-nolearn-01-10_24_06_507_AM-26-Jan-2023_episode timestep.png">
+                </div>
+              </div>
+            </script>
+          </section>
+
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (3) it is self-org :)
+              ----
+              <img data-src="res/action-selection-1.png">
+
+              "Beacons": role specialised in pheromone deposit
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (3) it is self-org :)
+              ----
+              <img data-src="res/action-selection-1-mod.png">
+
+              "Followers": role specialised in following pheromone
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (3) it is self-org :)
+              ----
+              <img data-src="res/action-selection-3-mod.png">
+
+              "Explorers": role specialised in exploring env
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-transition="slide" -->
+              ## Results: (3) it is self-org :)
+              ----
+              <img width="50%" data-src="res/self-org.png">
             </script>
           </section>
         </section>
