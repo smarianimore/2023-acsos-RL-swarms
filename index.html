@@ -91,7 +91,7 @@
               * Furthermore, coordination may be implicit or explicit
               <ul><small>
                 <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
-                <li> explicit, when agents can't thus need to tell each other what to do </li>
+                <li> explicit when agents can't, thus need to tell each other what to do </li>
               </small></ul>
             </script>
           </section>
@@ -102,12 +102,12 @@
               * Furthermore, coordination may be implicit or explicit
               <ul><small>
                 <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
-                <li> explicit, when agents can't thus need to tell each other what to do </li>
+                <li> explicit when agents can't, thus need to tell each other what to do </li>
               </small></ul>
               * In any case
               <ul><small>
                 <li> communication actions are mostly assumed as innate capabilities </li>
-                <li> coordination protocols are either tailored to goal by design or fine-tuned via simulation </li>
+                <li> coordination protocols are either tailored to goal by design, or fine-tuned via simulation </li>
               </small></ul>
             </script>
           </section>
@@ -118,12 +118,12 @@
               * Furthermore, coordination may be implicit or explicit
               <ul><small>
                 <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
-                <li> explicit, when agents can't thus need to tell each other what to do </li>
+                <li> explicit when agents can't, thus need to tell each other what to do </li>
               </small></ul>
               * In any case
               <ul><small>
                 <li> communication actions are mostly assumed as innate capabilities </li>
-                <li> coordination protocols are either tailored to goal by design or fine-tuned via simulation </li>
+                <li> coordination protocols are either tailored to goal by design, or fine-tuned via simulation </li>
               </small></ul>
 
               But learning them would enable greater adaptiveness with minimal (or no) design intervention!
@@ -146,7 +146,7 @@
               ## Goal
               ----
               <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
-              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p style="color: green"> Let's try with pheromone-based communication! </p>
               <small> (pervasive, simple yet powerful) </small>
             </script>
           </section>
@@ -156,7 +156,7 @@
               ## Goal
               ----
               <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
-              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p style="color: green"> Let's try with pheromone-based communication! </p>
               <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
@@ -167,7 +167,7 @@
               ## Goal
               ----
               <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
-              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p style="color: green"> Let's try with pheromone-based communication! </p>
               <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
@@ -179,7 +179,7 @@
               ## Goal
               ----
               <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
-              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p style="color: green"> Let's try with pheromone-based communication! </p>
               <p><small> (pervasive, simple yet powerful,) </small></p>
 
               1. is it feasible?
@@ -192,7 +192,7 @@
               ## Goal
               ----
               <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
-              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p style="color: green"> Let's try with pheromone-based communication! </p>
               <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
@@ -301,6 +301,7 @@
                   <img data-src="res/original-end.png">
                 </div>
               </div>
+              Well studied and exploited in swarm robotics
             </script>
           </section>
         </section>
@@ -398,15 +399,14 @@
                 <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
                 <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
                 <li> c + (f) stand-still (no comm baseline) </li>
-                <li> d,e (sota baseline) </li>
+                <li> d,e (hard-coded sota baseline) </li>
               </small></ul>
               * Reward functions (tests adaptation):
               <ul><small>
                 <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
                 <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ </li>
               </small></ul>
-
-              Minimal intervention: swapped reward $\Leftrightarrow$ penalty!
+              * Goal: learn when to deposit/follow pheromone (not in reward!)
             </script>
           </section>
 
@@ -519,6 +519,7 @@
                   <img data-src="res/BS-baseline-nolearn-01-10_24_06_507_AM-26-Jan-2023_episode timestep.png">
                 </div>
               </div>
+              On average, better than hard-coding policy!
             </script>
           </section>
         </section>
@@ -578,6 +579,7 @@
                   </ul>
                 </div>
               </div>
+              <p><small> (quantitative analysis of emergence of roles in paper) </small></p>
             </script>
           </section>
           <section data-markdown data-auto-animate>
@@ -605,6 +607,7 @@
                   </ul>
                 </div>
               </div>
+              <p><small> (quantitative analysis of emergence of roles in paper) </small></p>
             </script>
           </section>
           <section data-markdown data-auto-animate>
@@ -629,41 +632,11 @@
                   <ul>
                     <li> Beacons signal to others an opportunity for clustering </li>
                     <li> Followers listen and react to signals to form clusters </li>
-                    <li> Explorers are there for...what? </li>
+                    <li> Explorers give chance to escape local optima! </li>
                   </ul>
                 </div>
               </div>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide:  -->
-              ## Results: (3) it is self-org :)
-              ----
-              <img data-src="res/BS-chemical-gradient-02-03_29_41_745_PM-16-Dec-2022_actions_EVERY10.png">
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide: data-transition="slide" -->
-              ## Results: (3) it is self-org :)
-              ----
-              <img data-src="res/BS-chemical-gradient-02-03_29_41_745_PM-16-Dec-2022_actions_EVERY10.png">
-              <ul>
-                <li> Key: specific configuration (followers > explores >> beacons) </li>
-              </ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide:  -->
-              ## Results: (3) it is self-org :)
-              ----
-              <img width="75%" data-src="res/BS-chemical-gradient-02-03_29_41_745_PM-16-Dec-2022_actions_EVERY10.png">
-              <ul>
-                <li> Key: specific global actions configuration (followers > explorers >> beacons) </li>
-                <li> Explorers give chance to escape local optima! </li>
-              </ul>
+              <p><small> (quantitative analysis of emergence of roles in paper) </small></p>
             </script>
           </section>
         </section>
@@ -727,6 +700,7 @@
                   <br>
                   <ul>
                     <li> $R(s,a) \rightarrow \bar{R}(s,a)$ $\implies$ clustering $\rightarrow$ scattering </li>
+                    <br>
                     <li> Same communication means (pheromone), opposite result! </li>
                   </ul>
                 </div>
@@ -749,7 +723,7 @@
               ### Conclusion
               ----
               1. Learning pheromone-based communication for self-organising coordination is possible and effective
-              2. Policies diverge to accomplish goal despite agents' homogeneity
+              2. Policies diverge to accomplish goal despite agents' homogeneity, realising self-organisation
             </script>
           </section>
           <section data-markdown data-auto-animate>
@@ -757,8 +731,56 @@
               ### Conclusion
               ----
               1. Learning pheromone-based communication for self-organising coordination is possible and effective
-              2. Policies diverge to accomplish goal despite agents' homogeneity
+              2. Policies diverge to accomplish goal despite agents' homogeneity, realising self-organisation
               3. Roles emergence is key, and self-organisation is deeply intertwined
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ### Conclusion
+              ----
+              1. Learning pheromone-based communication for self-organising coordination is possible and effective
+              2. Policies diverge to accomplish goal despite agents' homogeneity, realising self-organisation
+              3. Roles emergence is key, and self-organisation is deeply intertwined
+              4. Learning to communicate enables adapting to changing goals
+            </script>
+          </section>
+        </section>
+
+        <section data-transition="convex">
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-background-image="res/" data-background-opacity=0.25 data-background-size="cover" -->
+              ### What now?
+              ----
+              1. Further study adaptation (change goal online)
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ### What now?
+              ----
+              1. Further study adaptation (change goal online)
+              2. Generalise to other environments (eg obstacles) and tasks (eg foraging)
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ### What now?
+              ----
+              1. Further study adaptation (change goal online)
+              2. Generalise to other environments (eg obstacles) and tasks (eg foraging)
+              3. Benchmark with different learning algos (but still independent learners)
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ### What now?
+              ----
+              1. Further study adaptation (change goal online)
+              2. Generalise to other environments (eg obstacles) and tasks (eg foraging)
+              3. Benchmark with different learning algos (but still independent learners)
+              4. Compare against evolutionary algorithms
             </script>
           </section>
         </section>
@@ -770,7 +792,7 @@
           <p><a href="https://smarianimore.github.io"> Stefano Mariani </a></p>
           <hr>
           <h3>Questions welcome :)</h3>
-          <p>(also: join us!)</p>
+          <p>(also: we are having fun, join us!)</p>
         </section>
 
       </div>
