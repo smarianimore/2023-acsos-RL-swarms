@@ -59,10 +59,11 @@
               <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Motivation
               ----
-              * Agents in MAS must coordinate to achieve collective goals
+              * Agents in MAS may need to achieve collective goals they cannot in isolation
               <ul><small>
-                <li> centralised w/ global info VS self-organising </li>
-                <li> implicit w/ full observability VS communication w/ partial obs </li>
+                <li> limited perception/action capabilities </li>
+                <li> computational constraints </li>
+                <li> inherent distribution </li>
               </small></ul>
             </script>
           </section>
@@ -70,15 +71,16 @@
             <script type="text/template">
               ## Motivation
               ----
-              * Agents in MAS must coordinate to achieve collective goals
+              * Agents in MAS may need to achieve collective goals they cannot in isolation
               <ul><small>
-                <li> centralised w/ global info VS self-organising </li>
-                <li> implicit w/ full observability VS communication w/ partial obs </li>
+                <li> limited perception/action capabilities </li>
+                <li> computational constraints </li>
+                <li> inherent distribution </li>
               </small></ul>
-              * Communication actions and coordination protocols
+              * They must thus coordinate somehow
               <ul><small>
-                <li> usually assumed as innate capabilities of agents </li>
-                <li> tailored to goal to pursue by design / via simulation </li>
+                <li> top-down design, eg centralised controllers, communication protocols, coordination models </li>
+                <li> bottom-up emergence, eg self-organisation, learning </li>
               </small></ul>
             </script>
           </section>
@@ -86,29 +88,76 @@
             <script type="text/template">
               ## Motivation
               ----
-              * Agents in MAS must coordinate to achieve collective goals
+              * Furthermore, coordination may be implicit or explicit
               <ul><small>
-                <li> centralised w/ global info VS self-organising </li>
-                <li> implicit w/ full observability VS communication w/ partial obs </li>
+                <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
+                <li> explicit, when agents can't thus need to tell each other what to do </li>
               </small></ul>
-              * Communication actions and coordination protocols
-              <ul><small>
-                <li> usually assumed as innate capabilities of agents </li>
-                <li> tailored to goal to pursue by design / via simulation </li>
-              </small></ul>
-
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt from scratch? </p>
             </script>
           </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Motivation
+              ----
+              * Furthermore, coordination may be implicit or explicit
+              <ul><small>
+                <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
+                <li> explicit, when agents can't thus need to tell each other what to do </li>
+              </small></ul>
+              * In any case
+              <ul><small>
+                <li> communication actions are mostly assumed as innate capabilities </li>
+                <li> coordination protocols are either tailored to goal by design or fine-tuned via simulation </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Motivation
+              ----
+              * Furthermore, coordination may be implicit or explicit
+              <ul><small>
+                <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
+                <li> explicit, when agents can't thus need to tell each other what to do </li>
+              </small></ul>
+              * In any case
+              <ul><small>
+                <li> communication actions are mostly assumed as innate capabilities </li>
+                <li> coordination protocols are either tailored to goal by design or fine-tuned via simulation </li>
+              </small></ul>
 
+              But learning them would enable greater adaptiveness with minimal (or no) design intervention!
+            </script>
+          </section>
+        </section>
+
+        <section data-transition="convex">
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
-              <p style="color: green"> Try with pheromone-based communication! </p>
-
-              <small> (simple yet powerful) </small>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Goal
+              ----
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: green"> We start with pheromone-based communication! </p>
+              <small> (pervasive, simple yet powerful) </small>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Goal
+              ----
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
             </script>
@@ -117,9 +166,9 @@
             <script type="text/template">
               ## Goal
               ----
-              <p style="color: green"> Learn pheromone-based communication! </p>
-
-              <small> (simple yet powerful) </small>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
               2. is it effective (wrt hard-coded)?
@@ -129,9 +178,9 @@
             <script type="text/template">
               ## Goal
               ----
-              <p style="color: green"> Learn pheromone-based communication! </p>
-
-              <small> (simple yet powerful) </small>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p><small> (pervasive, simple yet powerful,) </small></p>
 
               1. is it feasible?
               2. is it effective (wrt hard-coded)?
@@ -142,9 +191,9 @@
             <script type="text/template">
               ## Goal
               ----
-              <p style="color: green"> Learn pheromone-based communication! </p>
-
-              <small> (simple yet powerful) </small>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: green"> We start with pheromone-based communication! </p>
+              <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
               2. is it effective (wrt hard-coded)?
@@ -152,47 +201,56 @@
               4. is it adaptive to changing goals?
             </script>
           </section>
-
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
-              ## Contribution
-              ----
-              1. MARL problem formulation
-              2. NetLogo model
-              3. Experimental evaluation
-
-              Potential impact on swarm robotics (besides MARL)
-            </script>
-          </section>
         </section>
 
         <section data-transition="convex">
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
-              ## Q-learning in 1 slide :)
+              ## Background
               ----
-              * Track in value $q$ "how worth" it is to do action $a$ in state $s$
-              * The higher the reward $r$ got in $s$ after doing $a$ the higher the increase in $q$
-              * Best policy is to always select $a$ with highest $q$ in given $s$
-              * Exploration/exploitation tradeoff (optimality $\implies$ visit all states infinitely often)
+              * Multiagent reinforcement learning provides methods for learning
+              <ul><small>
+                <li> ungrounded communication: language-based (no a-priori meaning) </li>
+                <li> grounded communication: action-based (depends on environment) </li>
+              </small></ul>
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
-              ## Q-learning in MAS?
+              ## Background
               ----
-              * Conceived for single-agent env $\implies$ convergence guarantees there :(
-              * No formal proof of failure for MARL :)
-              * Well suited for our goal (independent learning) :)
-              * Existing literature of successful applications :)
+              * Multiagent reinforcement learning provides methods for learning
+              <ul><small>
+                <li> ungrounded communication: language-based (no a-priori meaning) </li>
+                <li> grounded communication: action-based (depends on environment) </li>
+              </small></ul>
+              * We focus on stigmergy
+              <ul><small>
+                <li> pervasive in nature, effective in MAS and swarm robotics </li>
+                <li> simple yet powerful </li>
+              </small></ul>
             </script>
           </section>
-        </section>
-
-        <section data-transition="convex">
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
+              ## Background
+              ----
+              * Multiagent reinforcement learning provides methods for learning
+              <ul><small>
+                <li> ungrounded communication: language-based (no a-priori meaning) </li>
+                <li> grounded communication: action-based (depends on environment) </li>
+              </small></ul>
+              * We focus on stigmergy
+              <ul><small>
+                <li> pervasive in nature, effective in MAS and swarm robotics </li>
+                <li> simple yet powerful </li>
+              </small></ul>
+              * In particular, we study pheromone-based communication
+            </script>
+          </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="cover" -->
@@ -245,7 +303,9 @@
               </div>
             </script>
           </section>
+        </section>
 
+        <section data-transition="convex">
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide:  -->
@@ -357,7 +417,7 @@
               ----
               <img width="70%" data-src="res/model-params.png">
 
-              <small> <em>(too boring now, check paper)</em> </small>
+              <small> <em>(typical slide to skip, details in paper)</em> </small>
             </script>
           </section>
         </section>
