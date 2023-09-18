@@ -59,7 +59,7 @@
               <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Motivation
               ----
-              * Agents in MAS may need to achieve collective goals they cannot in isolation
+              * Agents in MAS may need to achieve **collective goals** they cannot achieve in isolation
               <ul><small>
                 <li> limited perception/action capabilities </li>
                 <li> computational constraints </li>
@@ -71,16 +71,16 @@
             <script type="text/template">
               ## Motivation
               ----
-              * Agents in MAS may need to achieve collective goals they cannot in isolation
+              * Agents in MAS may need to achieve **collective goals** they cannot in isolation
               <ul><small>
                 <li> limited perception/action capabilities </li>
                 <li> computational constraints </li>
                 <li> inherent distribution </li>
               </small></ul>
-              * They must thus coordinate somehow
+              * They must thus **coordinate** somehow
               <ul><small>
                 <li> top-down design, eg centralised controllers, communication protocols, coordination models </li>
-                <li> bottom-up emergence, eg self-organisation, learning </li>
+                <li> <em>bottom-up emergence</em>, eg self-organisation, learning </li>
               </small></ul>
             </script>
           </section>
@@ -88,10 +88,10 @@
             <script type="text/template">
               ## Motivation
               ----
-              * Furthermore, coordination may be implicit or explicit
+              * Coordination may be implicit or explicit
               <ul><small>
-                <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
-                <li> explicit when agents can't, thus need to tell each other what to do </li>
+                <li> implicit, when agent can observe each other actions and/or effects, hence can infer how to react accordingly </li>
+                <li> <em>explicit</em> when agents cannot, thus need to "talk" to each other about what to do </li>
               </small></ul>
             </script>
           </section>
@@ -99,34 +99,34 @@
             <script type="text/template">
               ## Motivation
               ----
-              * Furthermore, coordination may be implicit or explicit
+              * Coordination may be implicit or explicit
               <ul><small>
-                <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
-                <li> explicit when agents can't, thus need to tell each other what to do </li>
+                <li> implicit, when agent can observe each other actions and/or effects, hence can infer how to react accordingly </li>
+                <li> <em>explicit</em> when agents cannot, thus need to "talk" to each other about what to do </li>
+              </small></ul>
+              * In any case, in the literature
+              <ul><small>
+                <li> communication actions are mostly assumed as <strong>innate capabilities</strong> </li>
+                <li> coordination protocols are tailored to goal <strong>by design</strong> and/or fine-tuned via simulation </li>
+              </small></ul>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Motivation
+              ----
+              * Coordination may be implicit or explicit
+              <ul><small>
+                <li> implicit, when agent can observe each other actions and/or effects, hence can infer how to react accordingly </li>
+                <li> <em>explicit</em> when agents cannot, thus need to "talk" to each other about what to do </li>
               </small></ul>
               * In any case
               <ul><small>
-                <li> communication actions are mostly assumed as innate capabilities </li>
-                <li> coordination protocols are either tailored to goal by design, or fine-tuned via simulation </li>
-              </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Motivation
-              ----
-              * Furthermore, coordination may be implicit or explicit
-              <ul><small>
-                <li> implicit, when agent can observe each other actions and/or effects, hence react accordingly </li>
-                <li> explicit when agents can't, thus need to tell each other what to do </li>
-              </small></ul>
-              * In any case
-              <ul><small>
-                <li> communication actions are mostly assumed as innate capabilities </li>
-                <li> coordination protocols are either tailored to goal by design, or fine-tuned via simulation </li>
+                <li> communication actions are mostly assumed as <strong>innate capabilities</strong> </li>
+                <li> coordination protocols are tailored to goal <strong>by design</strong> and/or fine-tuned via simulation </li>
               </small></ul>
 
-              But learning them would enable greater adaptiveness with minimal (or no) design intervention!
+              But <span style="color: blue">learning</span> them would enable greater adaptiveness with minimal design intervention!
             </script>
           </section>
         </section>
@@ -137,7 +137,7 @@
               <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
             </script>
           </section>
           <section data-markdown data-auto-animate>
@@ -145,9 +145,9 @@
               <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
               <p style="color: green"> Let's try with pheromone-based communication! </p>
-              <small> (pervasive, simple yet powerful) </small>
+              <small> (pervasive, simple yet powerful explicit mean for bottom-up coordination) </small>
             </script>
           </section>
           <section data-markdown data-auto-animate>
@@ -155,9 +155,8 @@
               <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Goal
               ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
               <p style="color: green"> Let's try with pheromone-based communication! </p>
-              <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
             </script>
@@ -166,9 +165,8 @@
             <script type="text/template">
               ## Goal
               ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
               <p style="color: green"> Let's try with pheromone-based communication! </p>
-              <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
               2. is it effective (wrt hard-coded)?
@@ -178,9 +176,8 @@
             <script type="text/template">
               ## Goal
               ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
               <p style="color: green"> Let's try with pheromone-based communication! </p>
-              <p><small> (pervasive, simple yet powerful,) </small></p>
 
               1. is it feasible?
               2. is it effective (wrt hard-coded)?
@@ -191,9 +188,8 @@
             <script type="text/template">
               ## Goal
               ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt online and from scratch? </p>
+              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
               <p style="color: green"> Let's try with pheromone-based communication! </p>
-              <p><small> (pervasive, simple yet powerful) </small></p>
 
               1. is it feasible?
               2. is it effective (wrt hard-coded)?
@@ -209,10 +205,10 @@
               <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Background
               ----
-              * Multiagent reinforcement learning provides methods for learning
+              * **Multiagent reinforcement learning** provides methods for learning
               <ul><small>
                 <li> ungrounded communication: language-based (no a-priori meaning) </li>
-                <li> grounded communication: action-based (depends on environment) </li>
+                <li> <em>grounded communication</em>: action-based (meaning given by environment) </li>
               </small></ul>
             </script>
           </section>
@@ -221,15 +217,16 @@
               <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Background
               ----
-              * Multiagent reinforcement learning provides methods for learning
+              * **Multiagent reinforcement learning** provides methods for learning
               <ul><small>
                 <li> ungrounded communication: language-based (no a-priori meaning) </li>
-                <li> grounded communication: action-based (depends on environment) </li>
+                <li> <em>grounded communication</em>: action-based (meaning given by environment) </li>
               </small></ul>
-              * We focus on stigmergy
+              * We focus on **stigmergy**
               <ul><small>
                 <li> pervasive in nature, effective in MAS and swarm robotics </li>
-                <li> simple yet powerful </li>
+                <li> simple yet powerful: few mechanisms, wide range of self-org behaviours </li>
+                <li> explicit communication mediated by environment </li>
               </small></ul>
             </script>
           </section>
@@ -238,17 +235,18 @@
               <!-- .slide: data-background-image="res/" data-background-opacity="0.15" data-background-size="contain" -->
               ## Background
               ----
-              * Multiagent reinforcement learning provides methods for learning
+              * **Multiagent reinforcement learning** provides methods for learning
               <ul><small>
                 <li> ungrounded communication: language-based (no a-priori meaning) </li>
-                <li> grounded communication: action-based (depends on environment) </li>
+                <li> <em>grounded communication</em>: action-based (meaning given by environment) </li>
               </small></ul>
-              * We focus on stigmergy
+              * We focus on **stigmergy**
               <ul><small>
                 <li> pervasive in nature, effective in MAS and swarm robotics </li>
-                <li> simple yet powerful </li>
+                <li> simple yet powerful: few mechanisms, wide range of self-org behaviours </li>
+                <li> explicit communication mediated by environment </li>
               </small></ul>
-              * In particular, we study pheromone-based communication
+              * In particular, we study <span style="color: blue">pheromone-based communication</span>
             </script>
           </section>
           <section data-markdown data-auto-animate>
@@ -256,7 +254,7 @@
               <!-- data-background-image="res/" data-background-opacity="0.15" data-background-size="cover" -->
               ### Model
               ----
-              * Slime mold aggregation (simplest swarming)
+              * **Slime mold aggregation** (simplest swarming)
                 - slime mold is different cells when env is good (eg no threats)
                 - cells aggregate when env becomes hostile
             </script>
@@ -265,10 +263,10 @@
             <script type="text/template">
               ### Model
               ----
-              * Slime mold aggregation (simplest swarming)
+              * **Slime mold aggregation** (simplest swarming)
                 - slime mold is different cells when env is good (eg no threats)
                 - cells aggregate when env becomes hostile
-              * Aggregation appears by emergence
+              * Aggregation appears **by emergence** (self-org!)
                 1. cells move around depositing pheromone
                 2. cells prefer to move toward pheromone
                 3. pheromone evaporates gradually
@@ -301,7 +299,7 @@
                   <img data-src="res/original-end.png">
                 </div>
               </div>
-              Well studied and exploited in swarm robotics
+              Well studied and exploited in MAS and swarm robotics
             </script>
           </section>
         </section>
@@ -312,7 +310,7 @@
               <!-- .slide:  -->
               ## MARL problem formulation
               ----
-              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Obs space: 1-hop pheromone gradient (<em>minimal!</em>)
             </script>
           </section>
           <section data-markdown data-auto-animate>
@@ -320,23 +318,13 @@
               <!-- .slide:  -->
               ## MARL problem formulation
               ----
-              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Obs space: 1-hop pheromone gradient (<em>minimal!</em>)
               * Action space (1 $\forall$ experiment):
               <ul><small>
-                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
-              </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide:  -->
-              ## MARL problem formulation
-              ----
-              * Obs space: 1-hop pheromone gradient (minimal!)
-              * Action space (1 $\forall$ experiment):
-              <ul><small>
-                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
-                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (<em>challenging</em>) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (<em>tests action "shadowing"</em>) </li>
+                <li> c + (f) stand-still (<em>no comm baseline</em>) </li>
+                <li> d,e (<em>hard-coded baseline</em>) </li>
               </small></ul>
             </script>
           </section>
@@ -345,68 +333,40 @@
               <!-- .slide:  -->
               ## MARL problem formulation
               ----
-              * Obs space: 1-hop pheromone gradient (minimal!)
+              * Obs space: 1-hop pheromone gradient (<em>minimal!</em>)
               * Action space (1 $\forall$ experiment):
               <ul><small>
-                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
-                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
-                <li> c + (f) stand-still (no comm baseline) </li>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (<em>challenging</em>) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (<em>tests action "shadowing"</em>) </li>
+                <li> c + (f) stand-still (<em>no comm baseline</em>) </li>
+                <li> d,e (<em>hard-coded baseline</em>) </li>
               </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide:  -->
-              ## MARL problem formulation
-              ----
-              * Obs space: 1-hop pheromone gradient (minimal!)
-              * Action space (1 $\forall$ experiment):
-              <ul><small>
-                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
-                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
-                <li> c + (f) stand-still (no comm baseline) </li>
-                <li> d,e (sota baseline) </li>
-              </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide:  -->
-              ## MARL problem formulation
-              ----
-              * Obs space: 1-hop pheromone gradient (minimal!)
-              * Action space (1 $\forall$ experiment):
-              <ul><small>
-                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
-                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
-                <li> c + (f) stand-still (no comm baseline) </li>
-                <li> d,e (sota baseline) </li>
-              </small></ul>
-              * Reward functions (tests adaptation):
-              <ul><small>
-                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
-              </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide:  -->
-              ## MARL problem formulation
-              ----
-              * Obs space: 1-hop pheromone gradient (minimal!)
-              * Action space (1 $\forall$ experiment):
-              <ul><small>
-                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (challenging) </li>
-                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (tests action "shadowing") </li>
-                <li> c + (f) stand-still (no comm baseline) </li>
-                <li> d,e (hard-coded sota baseline) </li>
-              </small></ul>
-              * Reward functions (tests adaptation):
+              * Reward functions (<em>tests adaptation</em>):
               <ul><small>
                 <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
                 <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ </li>
               </small></ul>
-              * Goal: learn when to deposit/follow pheromone (not in reward!)
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              <!-- .slide:  -->
+              ## MARL problem formulation
+              ----
+              * Obs space: 1-hop pheromone gradient (<em>minimal!</em>)
+              * Action space (1 $\forall$ experiment):
+              <ul><small>
+                <li> (a) drop-chemical, (b) move-toward-chemical, (c) random-walk (<em>challenging</em>) </li>
+                <li> a,b,c + (d) move-and-drop + (e) walk-and-drop (<em>tests action "shadowing"</em>) </li>
+                <li> c + (f) stand-still (<em>no comm baseline</em>) </li>
+                <li> d,e (<em>hard-coded baseline</em>) </li>
+              </small></ul>
+              * Reward functions (<em>tests adaptation</em>):
+              <ul><small>
+                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
+                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ </li>
+              </small></ul>
+              * Goal: learn <span style="color: blue"> when </span> to deposit/follow pheromone (*no direct incentive in reward!*)
             </script>
           </section>
 
@@ -632,7 +592,7 @@
                   <ul>
                     <li> Beacons signal to others an opportunity for clustering </li>
                     <li> Followers listen and react to signals to form clusters </li>
-                    <li> Explorers give chance to escape local optima! </li>
+                    <li> <em>Explorers give chance to escape local optima!</em> </li>
                   </ul>
                 </div>
               </div>
@@ -673,35 +633,8 @@
                   <br>
                   <ul>
                     <li> $R(s,a) \rightarrow \bar{R}(s,a)$ $\implies$ clustering $\rightarrow$ scattering </li>
-                  </ul>
-                </div>
-              </div>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide:  -->
-              ## Results: (4) it is adaptive :)
-              ----
-              <style>
-                .container{
-                  display: flex;
-                }
-                .col{
-                  flex: 1;
-                }
-              </style>
-              <div class="container">
-                <div class="col">
-                  <img data-src="res/BS-scatter-01-01_00_32_403_PM-16-May-2023_cluster size.png">
-                  <img data-src="res/BS-scatter-01-01_00_32_403_PM-16-May-2023_actions_EVERY100_ZOOM_MORE_RIGHT.png">
-                </div>
-                <div class="col">
-                  <br>
-                  <ul>
-                    <li> $R(s,a) \rightarrow \bar{R}(s,a)$ $\implies$ clustering $\rightarrow$ scattering </li>
                     <br>
-                    <li> Same communication means (pheromone), opposite result! </li>
+                    <li> <em>Same communication means (pheromone), opposite result!</em> </li>
                   </ul>
                 </div>
               </div>
@@ -715,23 +648,23 @@
               <!-- .slide: data-background-image="res/" data-background-opacity=0.25 data-background-size="cover" -->
               ### Conclusion
               ----
-              1. Learning pheromone-based communication for self-organising coordination is possible and effective
+              1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ### Conclusion
               ----
-              1. Learning pheromone-based communication for self-organising coordination is possible and effective
-              2. Policies diverge to accomplish goal despite agents' homogeneity, realising self-organisation
+              1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
+              2. Policies diverge to accomplish goal despite agents' homogeneity, <span style="color: green"> realising self-organisation </span>
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ### Conclusion
               ----
-              1. Learning pheromone-based communication for self-organising coordination is possible and effective
-              2. Policies diverge to accomplish goal despite agents' homogeneity, realising self-organisation
+              1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
+              2. Policies diverge to accomplish goal despite agents' homogeneity, <span style="color: green"> realising self-organisation </span>
               3. Roles emergence is key, and self-organisation is deeply intertwined
             </script>
           </section>
@@ -739,10 +672,10 @@
             <script type="text/template">
               ### Conclusion
               ----
-              1. Learning pheromone-based communication for self-organising coordination is possible and effective
-              2. Policies diverge to accomplish goal despite agents' homogeneity, realising self-organisation
+              1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
+              2. Policies diverge to accomplish goal despite agents' homogeneity, <span style="color: green"> realising self-organisation </span>
               3. Roles emergence is key, and self-organisation is deeply intertwined
-              4. Learning to communicate enables adapting to changing goals
+              4. Learning to communicate enables <span style="color: green">adapting</span> to changing goals
             </script>
           </section>
         </section>
@@ -792,7 +725,7 @@
           <p><a href="https://smarianimore.github.io"> Stefano Mariani </a></p>
           <hr>
           <h3>Questions welcome :)</h3>
-          <p>(also: we are having fun, join us!)</p>
+          <p>(also: <em>we are having fun, join us!</em>)</p>
         </section>
 
       </div>
