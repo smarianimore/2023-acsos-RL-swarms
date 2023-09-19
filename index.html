@@ -155,39 +155,6 @@
               <p style="color: green"> Let's try with pheromone-based communication! </p>
 
               1. is it feasible?
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Goal
-              ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
-              <p style="color: green"> Let's try with pheromone-based communication! </p>
-
-              1. is it feasible?
-              2. is it effective (wrt hard-coded)?
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Goal
-              ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
-              <p style="color: green"> Let's try with pheromone-based communication! </p>
-
-              1. is it feasible?
-              2. is it effective (wrt hard-coded)?
-              3. is it functional to self-organisation?
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Goal
-              ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
-              <p style="color: green"> Let's try with pheromone-based communication! </p>
-
-              1. is it feasible?
               2. is it effective (wrt hard-coded)?
               3. is it functional to self-organisation?
               4. is it adaptive to changing goals?
@@ -224,31 +191,14 @@
                 <li> simple yet powerful: few mechanisms, wide range of self-org behaviours </li>
                 <li> explicit communication mediated by environment </li>
               </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide: data-background-image="res/stigmergy-1.jpg" data-background-opacity="0.1" data-background-size="contain" -->
-              ## Background
-              ----
-              * **Multiagent reinforcement learning** provides methods for learning
-              <ul><small>
-                <li> ungrounded communication: language-based (no a-priori meaning) </li>
-                <li> <em>grounded communication</em>: action-based (meaning given by environment) </li>
-              </small></ul>
-              * We focus on **stigmergy**
-              <ul><small>
-                <li> pervasive in nature, effective in MAS and swarm robotics </li>
-                <li> simple yet powerful: few mechanisms, wide range of self-org behaviours </li>
-                <li> explicit communication mediated by environment </li>
-              </small></ul>
-              * In particular, we study <span style="color: blue">pheromone-based communication</span>
+
+              In particular, we study <span style="color: blue">pheromone-based communication</span>
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ### Model
+              ## Model
               ----
               * **Slime mold aggregation** (simplest swarming)
                 - slime mold is different cells when env is good (eg no threats)
@@ -258,7 +208,7 @@
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ### Model
+              ## Model
               ----
               * **Slime mold aggregation** (simplest swarming)
                 - slime mold is different cells when env is good (eg no threats)
@@ -272,7 +222,7 @@
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ### Model
+              ## Model
               ----
               <img width="50%" data-src="res/original-start.png">
             </script>
@@ -280,7 +230,7 @@
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ### Model
+              ## Model
               ----
               <style>
                 .container{
@@ -339,8 +289,8 @@
               </small></ul>
               * Reward functions (<em>tests adaptation</em>):
               <ul><small>
-                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
-                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ </li>
+                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ (big, durable blobs) </li>
+                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r}) (NOT big, durable blobs)$ </li>
               </small></ul>
             </script>
           </section>
@@ -358,13 +308,61 @@
               </small></ul>
               * Reward functions (<em>tests adaptation</em>):
               <ul><small>
-                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ </li>
-                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ </li>
+                <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ (big, durable blobs) </li>
+                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ (NOT big, durable blobs) </li>
               </small></ul>
               * Goal: learn <span style="color: blue"> when </span> to deposit/follow pheromone (*no direct incentive in reward!*)
             </script>
           </section>
 
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Experimental setting
+              ----
+              * **Independent Q-learning** with GLIE exploration
+                - <span style="color: green"> fits real-world scenarios </span>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Experimental setting
+              ----
+              * **Independent Q-learning** with GLIE exploration
+                - <span style="color: green"> fits real-world scenarios </span>
+                - <span style="color: red"> loses convergence guarantees wrt single-agent </span>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Experimental setting
+              ----
+              * **Independent Q-learning** with GLIE exploration
+                - <span style="color: green"> fits real-world scenarios </span>
+                - <span style="color: red"> loses convergence guarantees wrt single-agent </span>
+                - <span style="color: green"> empirically, successful in literature </span>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Experimental setting
+              ----
+              * **Independent Q-learning** with GLIE exploration
+                - <span style="color: green"> fits real-world scenarios </span>
+                - <span style="color: red"> loses convergence guarantees wrt single-agent </span>
+                - <span style="color: green"> empirically, successful in literature </span>
+                - <span style="color: red"> issues: non-stationarity, credit assignment, shadow equilibria, ... </span>
+            </script>
+          </section>
+          <section data-markdown data-auto-animate>
+            <script type="text/template">
+              ## Experimental setting
+              ----
+              * **Independent Q-learning** with GLIE exploration
+              * Environment dynamics params fixed on hard-coded policies, *sweeping of learning params*
+              * Evaluation metrics: average cluster size, actions distribution, convergence time
+              * NetLogo model available (requires Q-learning plugin), data available, visualisation scripts available
+            </script>
+          </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ## Experimental setting
@@ -589,14 +587,6 @@
         <section data-transition="convex">
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              ### Results: (4) it is adaptive :)
-              ----
-              <img width="65%" data-src="res/BS-scatter-01-01_00_32_403_PM-16-May-2023_cluster size.png">
-              <img width="65%" data-src="res/BS-scatter-01-01_00_32_403_PM-16-May-2023_actions_EVERY100_ZOOM_MORE_RIGHT.png">
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
               ## Results: (4) it is adaptive :)
               ----
               <style>
@@ -628,31 +618,7 @@
         <section data-transition="convex" data-background-image="res/conclusion.jpg" data-background-opacity="0.1" data-background-size="contain">
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              ### Conclusion
-              ----
-              1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ### Conclusion
-              ----
-              1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
-              2. Policies diverge to accomplish goal despite agents' homogeneity, <span style="color: green"> realising self-organisation </span>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ### Conclusion
-              ----
-              1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
-              2. Policies diverge to accomplish goal despite agents' homogeneity, <span style="color: green"> realising self-organisation </span>
-              3. Roles emergence is key, and self-organisation is deeply intertwined
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ### Conclusion
+              ## Conclusion
               ----
               1. Learning pheromone-based communication for self-organising coordination is <span style="color: green"> possible and effective </span>
               2. Policies diverge to accomplish goal despite agents' homogeneity, <span style="color: green"> realising self-organisation </span>
@@ -665,31 +631,7 @@
         <section data-transition="convex" data-background-image="res/next-steps.jpg" data-background-opacity="0.1" data-background-size="contain">
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              ### What now?
-              ----
-              1. Further study adaptation (change goal online)
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ### What now?
-              ----
-              1. Further study adaptation (change goal online)
-              2. Generalise to other environments (eg obstacles) and tasks (eg foraging)
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ### What now?
-              ----
-              1. Further study adaptation (change goal online)
-              2. Generalise to other environments (eg obstacles) and tasks (eg foraging)
-              3. Benchmark with different learning algos (but still independent learners)
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ### What now?
+              ## What now?
               ----
               1. Further study adaptation (change goal online)
               2. Generalise to other environments (eg obstacles) and tasks (eg foraging)
@@ -703,7 +645,7 @@
           <h3> Thanks </h3>
           <h3> for your attention </h3>
           <hr>
-          <p><a href="https://smarianimore.github.io"> Stefano Mariani </a></p>
+          <p><a href="mailto:stefano.mariani@unimore.it"> Stefano Mariani </a></p>
           <hr>
           <style>
             .container{
