@@ -662,7 +662,7 @@
           </section>
         </section>
 
-        <section data-transition="convex" data-background-image="res/next-steps.jpg" data-background-opacity="0.1" data-background-size="cover">
+        <section data-transition="convex" data-background-image="res/next-steps.jpg" data-background-opacity="0.1" data-background-size="contain">
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ### What now?
@@ -705,7 +705,27 @@
           <hr>
           <p><a href="https://smarianimore.github.io"> Stefano Mariani </a></p>
           <hr>
-          <h3>Questions welcome :)</h3>
+          <style>
+            .container{
+              display: flex;
+            }
+            .col{
+              flex: 1;
+            }
+          </style>
+          <div class="container">
+            <div class="col">
+              <br>
+              <p><strong>Questions welcome :)</strong></p>
+            </div>
+            <div class="col">
+              <img width="65%" data-src="res/these-slides.png">
+            </div>
+            <div class="col">
+              <br>
+              <p>Scan to get these slides :)</p>
+            </div>
+          </div>
           <p>(also: <em>we are having fun, join us!</em>)</p>
         </section>
 
