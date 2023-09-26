@@ -74,7 +74,7 @@
                   Browse these slides :)
                   <ul><small>
                     <li> Navigation buttons at bottom right </li>
-                    <li> Down first, right next </li>
+                    <li> Go down first, then right next </li>
                     <li> &lt;Esc&gt; to get enter/exit overview </li>
                   </small></ul>
                 </div>
@@ -88,74 +88,48 @@
             <script type="text/template">
               ## Motivation
               ----
-              * Agents in MAS may need to achieve **collective goals** they cannot achieve in isolation
-              <ul><small>
-                <li> limited perception/action capabilities </li>
-                <li> computational constraints </li>
-                <li> inherent distribution </li>
-              </small></ul>
+              * **Stigmergic communication** widely used for self-organising coordination
+                <ul><small>
+                  <li> agents communicate by locally modifying/observing shared environment </li>
+                  <li> optimisation problems, network routing, MAS/CAS, swarm robotics, ... </li>
+                  <li> simple yet powerful, scalable </li>
+                </small></ul>
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ## Motivation
               ----
-              * Agents in MAS may need to achieve **collective goals** they cannot in isolation
-              <ul><small>
-                <li> limited perception/action capabilities </li>
-                <li> computational constraints </li>
-                <li> inherent distribution </li>
-              </small></ul>
-              * They must thus **coordinate** somehow
-              <ul><small>
-                <li> top-down design, eg centralised controllers, communication protocols, coordination models </li>
-                <li> <em>bottom-up emergence</em>, eg self-organisation, learning </li>
-              </small></ul>
+              * **Stigmergic communication** widely used for self-organising coordination
+                <ul><small>
+                  <li> agents communicate by locally modifying/observing shared environment </li>
+                  <li> optimisation problems, network routing, MAS/CAS, swarm robotics, ... </li>
+                  <li> simple yet powerful, scalable </li>
+                </small></ul>
+              * Communication rules mostly **hard-coded**
+                <ul><small>
+                  <li> e.g. <em>when</em> to deposit/follow pheromone, how much, ... </li>
+                  <li> typically, fine parameters tuning via simulation </li>
+                </small></ul>
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ## Motivation
               ----
-              * Coordination may be implicit or explicit
-              <ul><small>
-                <li> implicit, when agents can observe each other actions and/or effects, hence can infer how to react accordingly </li>
-                <li> <em>explicit</em> when agents cannot, thus need to "talk" to each other about what to do </li>
-              </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Motivation
-              ----
-              * Coordination may be implicit or explicit
-              <ul><small>
-                <li> implicit, when agent can observe each other actions and/or effects, hence can infer how to react accordingly </li>
-                <li> <em>explicit</em> when agents cannot, thus need to "talk" to each other about what to do </li>
-              </small></ul>
-              * In any case, in the literature
-              <ul><small>
-                <li> communication actions are mostly assumed as <strong>innate capabilities</strong> </li>
-                <li> coordination protocols are tailored to goal <strong>by design</strong> and/or fine-tuned via simulation </li>
-              </small></ul>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Motivation
-              ----
-              * Coordination may be implicit or explicit
-              <ul><small>
-                <li> implicit, when agent can observe each other actions and/or effects, hence can infer how to react accordingly </li>
-                <li> <em>explicit</em> when agents cannot, thus need to "talk" to each other about what to do </li>
-              </small></ul>
-              * In any case
-              <ul><small>
-                <li> communication actions are mostly assumed as <strong>innate capabilities</strong> </li>
-                <li> coordination protocols are tailored to goal <strong>by design</strong> and/or fine-tuned via simulation </li>
-              </small></ul>
+              * **Stigmergic communication** widely used for self-organising coordination
+                <ul><small>
+                  <li> agents communicate by locally modifying/observing shared environment </li>
+                  <li> optimisation problems, network routing, MAS/CAS, swarm robotics, ... </li>
+                  <li> simple yet powerful, scalable </li>
+                </small></ul>
+              * Communication rules mostly **hard-coded**
+                <ul><small>
+                  <li> e.g. <em>when</em> to deposit/follow pheromone, how much, ... </li>
+                  <li> typically, fine parameters tuning via simulation </li>
+                </small></ul>
 
-              But <span style="color: blue">learning</span> them would enable greater adaptiveness with minimal design intervention!
+              <p style="color: red"> Can be <strong>learnt</strong>? </p>
             </script>
           </section>
         </section>
@@ -173,16 +147,6 @@
               ## Goal
               ----
               <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
-              <p style="color: green"> Let's try with pheromone-based communication! </p>
-              <small> (pervasive, simple yet powerful explicit mean for bottom-up coordination) </small>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Goal
-              ----
-              <p style="color: red"> Can communication policies for self-organising coordination be learnt <em>online and from scratch</em>? </p>
-              <p style="color: green"> Let's try with pheromone-based communication! </p>
 
               1. is it feasible?
               2. is it effective (wrt hard-coded)?
@@ -198,10 +162,10 @@
               <!-- .slide: data-background-image="res/marl-1.jpg" data-background-opacity="0.15" data-background-size="contain" -->
               ## Background
               ----
-              * **Multiagent reinforcement learning** provides methods for learning
+              * **Multiagent reinforcement learning** provides methods for online learning
               <ul><small>
-                <li> ungrounded communication: language-based (no a-priori meaning) </li>
-                <li> <em>grounded communication</em>: action-based (meaning given by environment) </li>
+                <li> grounded communication: action-based (meaning given by environment) </li>
+                <li> <em>independent Q-learning</em>: no sharing of observations, actions, rewards, params, ... </li>
               </small></ul>
             </script>
           </section>
@@ -212,47 +176,21 @@
               ----
               * **Multiagent reinforcement learning** provides methods for learning
               <ul><small>
-                <li> ungrounded communication: language-based (no a-priori meaning) </li>
-                <li> <em>grounded communication</em>: action-based (meaning given by environment) </li>
+                <li> grounded communication: action-based (meaning given by environment) </li>
+                <li> <em>independent Q-learning</em>: no sharing of observations, actions, rewards, params, ... </li>
               </small></ul>
-              * We focus on **stigmergy**
+              * **Slime mold aggregation** as learning environment
               <ul><small>
-                <li> pervasive in nature, effective in MAS and swarm robotics </li>
-                <li> simple yet powerful: few mechanisms, wide range of self-org behaviours </li>
-                <li> explicit communication mediated by environment </li>
+                <li> cells move around depositing pheromone </li>
+                <li> cells prefer to move toward pheromone </li>
+                <li> pheromone evaporates gradually </li>
               </small></ul>
-
-              In particular, we study <span style="color: blue">pheromone-based communication</span>
             </script>
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ## Model
-              ----
-              * **Slime mold aggregation** (simplest swarming)
-                - slime mold is different cells when env is good (eg no threats)
-                - cells aggregate when env becomes hostile
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ## Model
-              ----
-              * **Slime mold aggregation** (simplest swarming)
-                - slime mold is different cells when env is good (eg no threats)
-                - cells aggregate when env becomes hostile
-              * Aggregation appears **by emergence** (self-org!)
-                1. cells move around depositing pheromone
-                2. cells prefer to move toward pheromone
-                3. pheromone evaporates gradually
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ## Model
+              ## Background
               ----
               <iframe width="800" height="480" src="https://www.youtube.com/embed/WfnToGc3F1g?si=XvAxPNIWdF6rH9PS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -262,13 +200,6 @@
         </section>
 
         <section data-transition="convex" data-background-image="res/marl-problem.jpg" data-background-opacity="0.1" data-background-size="contain">
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## MARL problem formulation
-              ----
-              * Obs space: 1-hop pheromone gradient (<em>minimal!</em>)
-            </script>
-          </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ## MARL problem formulation
@@ -323,44 +254,6 @@
             </script>
           </section>
 
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Experimental setting
-              ----
-              * **Independent Q-learning** with GLIE exploration
-                - <span style="color: green"> fits real-world scenarios </span>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Experimental setting
-              ----
-              * **Independent Q-learning** with GLIE exploration
-                - <span style="color: green"> fits real-world scenarios </span>
-                - <span style="color: red"> loses convergence guarantees wrt single-agent </span>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Experimental setting
-              ----
-              * **Independent Q-learning** with GLIE exploration
-                - <span style="color: green"> fits real-world scenarios </span>
-                - <span style="color: red"> loses convergence guarantees wrt single-agent </span>
-                - <span style="color: green"> empirically, successful in literature </span>
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Experimental setting
-              ----
-              * **Independent Q-learning** with GLIE exploration
-                - <span style="color: green"> fits real-world scenarios </span>
-                - <span style="color: red"> loses convergence guarantees wrt single-agent </span>
-                - <span style="color: green"> empirically, successful in literature </span>
-                - <span style="color: red"> issues: non-stationarity, credit assignment, shadow equilibria, ... </span>
-            </script>
-          </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
               ## Experimental setting
@@ -448,37 +341,6 @@
               <small> <br><br><br><br> hard-coded policies </small>
             </script>
           </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Results: (2) it is effective :)
-              ----
-              <style>
-                .container{
-                  display: flex;
-                }
-                .col{
-                  flex: 1;
-                }
-              </style>
-              <div class="container">
-                <div class="col">
-                  <img data-src="res/BS-3actions-gradient-ticks-01-11_45_55_375_AM-26-Jan-2023_cluster size.png">
-                </div>
-                <div class="col">
-                  <img data-src="res/BS-3actions-gradient-ticks-01-11_45_55_375_AM-26-Jan-2023_episode timestep.png">
-                </div>
-              </div>
-              <div class="container">
-                <div class="col">
-                  <img data-src="res/BS-baseline-nolearn-01-10_24_06_507_AM-26-Jan-2023_cluster size.png">
-                </div>
-                <div class="col">
-                  <img data-src="res/BS-baseline-nolearn-01-10_24_06_507_AM-26-Jan-2023_episode timestep.png">
-                </div>
-              </div>
-              On average, better than hard-coding policy!
-            </script>
-          </section>
         </section>
 
         <section data-transition="convex" data-background-image="res/results-3.jpg" data-background-opacity="0.1" data-background-size="cover">
@@ -486,33 +348,6 @@
             <script type="text/template">
               ## Results: (3) it is self-org :)
               ----
-              <img data-src="res/action-selection-1.png">
-
-              "Beacons": role specialised in pheromone deposit
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Results: (3) it is self-org :)
-              ----
-              <img data-src="res/action-selection-1-mod.png">
-
-              "Followers": role specialised in following pheromone
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Results: (3) it is self-org :)
-              ----
-              <img data-src="res/action-selection-3-mod.png">
-
-              "Explorers": role specialised in exploring env
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              ## Results: (3) it is self-org :)
-              ----
               <style>
                 .container{
                   display: flex;
@@ -528,7 +363,7 @@
                 <div class="col">
                   <br>
                   <ul>
-                    <li> Beacons signal to others an opportunity for clustering </li>
+                    <li> <em>Beacons</em>: signal to others an opportunity for clustering </li>
                   </ul>
                 </div>
               </div>
@@ -554,8 +389,8 @@
                 <div class="col">
                   <br>
                   <ul>
-                    <li> Beacons signal to others an opportunity for clustering </li>
-                    <li> Followers listen and react to signals to form clusters </li>
+                    <li> <em>Beacons</em>: signal to others an opportunity for clustering </li>
+                    <li> <em>Followers</em>: listen and react to signals to form clusters </li>
                   </ul>
                 </div>
               </div>
@@ -581,9 +416,9 @@
                 <div class="col">
                   <br>
                   <ul>
-                    <li> Beacons signal to others an opportunity for clustering </li>
-                    <li> Followers listen and react to signals to form clusters </li>
-                    <li> <em>Explorers give chance to escape local optima!</em> </li>
+                    <li> <em>Beacons</em>: signal to others an opportunity for clustering </li>
+                    <li> <em>Followers</em>: listen and react to signals to form clusters </li>
+                    <li> <em>Explorers</em>: give chance to escape local optima </li>
                   </ul>
                 </div>
               </div>
