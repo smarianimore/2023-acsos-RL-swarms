@@ -177,7 +177,7 @@
           </section>
           <section data-markdown data-auto-animate>
             <script type="text/template">
-              <!-- .slide: data-background-image="res/stigmergy-1.jpg" data-background-opacity="0.1" data-background-size="contain" -->
+              <!-- .slide: data-background-image="res/stigmergy-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
               ## Background
               ----
               * **Multiagent reinforcement learning** provides methods for learning
@@ -224,30 +224,8 @@
               <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
               ## Model
               ----
-              <img width="50%" data-src="res/original-start.png">
-            </script>
-          </section>
-          <section data-markdown data-auto-animate>
-            <script type="text/template">
-              <!-- .slide: data-background-image="res/slime-mold-1.jpg" data-background-opacity="0.1" data-background-size="cover" -->
-              ## Model
-              ----
-              <style>
-                .container{
-                  display: flex;
-                }
-                .col{
-                  flex: 1;
-                }
-              </style>
-              <div class="container">
-                <div class="col">
-                  <img data-src="res/original-start.png">
-                </div>
-                <div class="col">
-                  <img data-src="res/original-end.png">
-                </div>
-              </div>
+              <iframe width="800" height="480" src="https://www.youtube.com/embed/WfnToGc3F1g?si=XvAxPNIWdF6rH9PS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
               Well studied and exploited in MAS and swarm robotics
             </script>
           </section>
@@ -290,7 +268,7 @@
               * Reward functions (<em>tests adaptation</em>):
               <ul><small>
                 <li> clustering: $R(s,a) = (\tau * {\color{green}r}) + (\frac{c_s}{c_{th}} * {\color{green}r}^2) + (\bar\tau * {\color{red}p})$ (big, durable blobs) </li>
-                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r}) (NOT big, durable blobs)$ </li>
+                <li> scattering: $\bar{R}(s,a) = (\tau * {\color{red}p}) + (\frac{c_s}{c_{th}} * {\color{red}p}^2) + (\bar\tau * {\color{green}r})$ (opposite) </li>
               </small></ul>
             </script>
           </section>
@@ -589,28 +567,14 @@
             <script type="text/template">
               ## Results: (4) it is adaptive :)
               ----
-              <style>
-                .container{
-                  display: flex;
-                }
-                .col{
-                  flex: 1;
-                }
-              </style>
-              <div class="container">
-                <div class="col">
-                  <img data-src="res/BS-scatter-01-01_00_32_403_PM-16-May-2023_cluster size.png">
-                  <img data-src="res/BS-scatter-01-01_00_32_403_PM-16-May-2023_actions_EVERY100_ZOOM_MORE_RIGHT.png">
-                </div>
-                <div class="col">
-                  <br>
-                  <ul>
-                    <li> $R(s,a) \rightarrow \bar{R}(s,a)$ $\implies$ clustering $\rightarrow$ scattering </li>
-                    <br>
-                    <li> <em>Same communication means (pheromone), opposite result!</em> </li>
-                  </ul>
-                </div>
-              </div>
+
+              <iframe width="800" height="400" src="https://www.youtube.com/embed/y-ZyXFaR8bQ?si=FF1IRZxzvVpi2y6p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+              <ul>
+                <li> $R(s,a) \rightarrow \bar{R}(s,a)$ $\implies$ clustering $\rightarrow$ scattering </li>
+                <li> <em>Same comm means (pheromone), opposite result!</em> </li>
+              </ul>
+
             </script>
           </section>
         </section>
